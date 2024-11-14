@@ -1,31 +1,44 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "../components/Header";
 
-
-
 export default function MainPage() {
-
-    const { UserID } = useParams();
-    const [User, setUser] = useState({});
-
-    useEffect(() => {
-        if (UserID) {
-            fetch('http://localhost:8080/getGuideByID/' + UserID)
-                .then(response => response.json())
-                .then(data => setUser(data))
-                .catch(error => console.error(error));
-        }
-        else {
-            setUser(null)
-        }
-    }, [UserID]);
-
-    return(
+    return (
         <>
-            <Header user={User} />
-            <></>
-        </>
-    )
+        <Header />
+        <div className="mainpage_wrapper">
+            <div className="device_grid">
+                <div className="device_item">
+                    <div className="device_avatar"></div>
+                    <p>TV</p>
+                </div>
+                <div className="device_item">
+                    <div className="device_avatar"></div>
+                    <p>GARDINER</p>
+                </div>
+                <div className="device_item">
+                    <div className="device_avatar"></div>
+                    <p>HØYTALER</p>
+                </div>
+                <div className="device_item">
+                    <div className="device_avatar"></div>
+                    <p>MIKROBØLGEOVN</p>
+                </div>
+                <div className="device_item">
+                    <div className="device_avatar"></div>
+                    <p>RINGEKLOKKE</p>
+                </div>
+                <div className="device_item">
+                    <div className="device_avatar"></div>
+                    <p>HUS</p>
+                </div>
+            </div>
+            <div className="action_buttons">
+                <button className="button_add">Legg til enhet</button>
+                <button className="button_remove">Fjern enhet</button>
+            </div>
+        </div>
+    </>
+    );
 }
