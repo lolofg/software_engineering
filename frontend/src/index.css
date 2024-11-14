@@ -171,7 +171,7 @@ code {
 }
 /* Slutten på MainPage CSS */
 
-/* Popup styling */
+/* Starten på Popup styling */
 .device_popup {
   position: fixed;
   top: 0;
@@ -187,17 +187,22 @@ code {
 
 .popup_content {
   background-color: white;
-  border-radius: 10px;
-  padding: 2rem;
-  text-align: center;
-  width: 300px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  position: relative;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .device_avatar.large {
   width: 100px;
   height: 100px;
+  margin-bottom: 2rem;
 }
 
 .close_button {
@@ -249,4 +254,4 @@ code {
 .button_add:hover, .button_remove:hover {
   background-color: #f0f8ff;
 }
-
+/* Slutten på Popup styling */
