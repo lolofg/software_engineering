@@ -1,43 +1,43 @@
 package com.software.website.Entity;
 
-public class User {
-    private int userID;
-    private String firstName;
-    private String lastName;
-    private String email; 
+public class Users {
+    private int User_ID;
+    private String FirstName;
+    private String LastName;
+    private String Email; 
 
-    public User(){
+    public Users(){
     }
 
     public int getUserID(){
-        return userID;
+        return User_ID;
     }
 
     public void setUserID(int userID){
-        this.userID = userID; 
+        this.User_ID = userID; 
     }
 
     public String getFirstName(){
-        return firstName;
+        return FirstName;
     }
 
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        this.FirstName = firstName;
     }
     public String getLastName() {
-        return lastName;
+        return LastName;
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        this.LastName = lastName;
     }
 
     public String getEmail() {
-        return email;
+        return Email;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.Email = email;
     }
 
 
