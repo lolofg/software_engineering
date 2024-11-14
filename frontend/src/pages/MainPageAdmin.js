@@ -9,34 +9,40 @@ export default function MainPage() {
         <Header />
         <div className="mainpage_wrapper">
             <div className="device_grid">
+            <div className="search_item">
+                        <form className="search_form">
+                            <input
+                                type="search"
+                                className="form-control form-control-dark"
+                                placeholder="Search..."
+                                aria-label="Search"
+                            />
+                        </form>
+                    </div>
                 <div className="device_item">
                     <div className="device_avatar"></div>
-                    <p>TV</p>
+                    <p>BRUKER 1</p>
                 </div>
                 <div className="device_item">
                     <div className="device_avatar"></div>
-                    <p>GARDINER</p>
+                    <p>BRUKER 2</p>
                 </div>
                 <div className="device_item">
                     <div className="device_avatar"></div>
-                    <p>HØYTALER</p>
+                    <p>BRUKER 3</p>
                 </div>
                 <div className="device_item">
                     <div className="device_avatar"></div>
-                    <p>MIKROBØLGEOVN</p>
+                    <p>BRUKER 4</p>
                 </div>
                 <div className="device_item">
                     <div className="device_avatar"></div>
-                    <p>RINGEKLOKKE</p>
+                    <p>BRUKER 5</p>
                 </div>
                 <div className="device_item">
                     <div className="device_avatar"></div>
-                    <p>HUS</p>
+                    <p>BRUKER 6</p>
                 </div>
-            </div>
-            <div className="action_buttons">
-                <button className="button_add">Legg til enhet</button>
-                <button className="button_remove">Fjern enhet</button>
             </div>
         </div>
     </>
