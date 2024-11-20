@@ -7,7 +7,7 @@ export default function Login() {
     <div className="login_page_wrapper">
         <div className="signUp_Side">
             <h1 className="logIn_tittel">Log in</h1>
-            <div className="user_avatar"></div>
+            <i class="bi bi-person-fill" id='icon_avatar'></i>
 
             <input type="email" placeholder="Email" className="input_field" />
             <input type="password" placeholder="Password" className="input_field" />

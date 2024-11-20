@@ -51,7 +51,7 @@ export default function MainPageUser() {
             </div>
                     {devices.map((device, index) => (
                         <div key={index} className="device_item" onClick={() => handleDeviceClick(device)}>
-                            <div className="device_avatar"></div>
+                            <i class="bi bi-cloud-download-fill" id='icon_avatar'></i>
                             <p>{device.name}</p>
                         </div>
                     ))}

@@ -21,27 +21,27 @@ export default function MainPage() {
             </form>
             </div>
                 <div className="device_item">
-                    <div className="device_avatar"></div>
+                <i class="bi bi-person-fill" id='icon_avatar'></i>
                     <p>USER 1</p>
                 </div>
                 <div className="device_item">
-                    <div className="device_avatar"></div>
+                <i class="bi bi-person-fill" id='icon_avatar'></i>
                     <p>USER  2</p>
                 </div>
                 <div className="device_item">
-                    <div className="device_avatar"></div>
+                <i class="bi bi-person-fill" id='icon_avatar'></i>
                     <p>USER  3</p>
                 </div>
                 <div className="device_item">
-                    <div className="device_avatar"></div>
+                <i class="bi bi-person-fill" id='icon_avatar'></i>
                     <p>USER 4</p>
                 </div>
                 <div className="device_item">
-                    <div className="device_avatar"></div>
+                <i class="bi bi-person-fill" id='icon_avatar'></i>
                     <p>USER  5</p>
                 </div>
                 <div className="device_item">
-                    <div className="device_avatar"></div>
+                <i class="bi bi-person-fill" id='icon_avatar'></i>
                     <p>USER  6</p>
                 </div>
             </div>
