@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import React, {useEffect, useState} from 'react';
+import {Link, useParams} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "../components/Header";
 
@@ -23,9 +23,24 @@ export default function MainPageUser() {
         setSelectedDevice(null);
     };
 
+    const [User, setUser] = useState({});
+    const { UserID } = useParams();
+
+    useEffect(() => {
+        if (UserID) {
+            fetch('http://localhost:8080/user/' + UserID)
+                .then(response => response.json())
+                .then(data => setUser(data))
+                .catch(error => console.error(error));
+        }
+        else {
+            setUser(null)
+        }
+    }, [UserID]);
+
     return (
         <>
-            <Header />
+            <Header user={User}/>
             <div className="mainpage_wrapper">
                 {/* Grid med enheter */}
                 <div className="device_grid">
