@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.*;
 
 import com.software.website.Entity.Device;
 import com.software.website.service.DeviceService;
-
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 
