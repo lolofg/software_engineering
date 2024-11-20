@@ -25,7 +25,6 @@ code {
   background-color: #e6f2ff;
   margin: 0;
 }
-
 .signUp_Side {
   background-color: white;
   border-radius: 10px;
@@ -35,13 +34,11 @@ code {
   text-align: center;
   position: relative;
 }
-
 .logIn_tittel {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   font-weight: 400;
 }
-
 .user_avatar {
   width: 50px;
   height: 50px;
@@ -49,7 +46,6 @@ code {
   border-radius: 50%;
   margin: 1rem auto;
 }
-
 .input_field {
   width: 100%;
   padding: 0.5rem;
@@ -58,7 +54,6 @@ code {
   border-bottom: 1px solid #333;
   outline: none;
 }
-
 .button_signUp {
   display: inline-block;
   width: 100%;
@@ -73,13 +68,11 @@ code {
   margin-top: 1rem;
   transition: background-color 0.3s;
 }
-
 .button_container {
   display: flex;
   justify-content: space-between;
   margin-top: 1rem;
 }
-
 .button_signUp1{
   flex: 1;
   padding: 0.75rem;
@@ -93,27 +86,24 @@ code {
   transition: background-color 0.3s;
   text-align: center;
 }
-
 .button_signUp:hover {
   background-color: #45A049;
 }
-
 .links {
   display: flex;
   justify-content: space-between;
   margin-top: 1rem;
   font-size: 0.875rem;
 }
-
 .link_item {
   color: #007bff;
   text-decoration: none;
 }
-
 .link_item:hover {
   text-decoration: underline;
 }
 /* slutten på logg inn side css  */
+
 
 /* Starten på MainPage CSS */
 .mainpage_wrapper {
@@ -121,49 +111,69 @@ code {
   flex-direction: column;
   align-items: center;
   background-color: #e6f2ff;
+  height: 100vh;
+  padding-top: 8rem;
   min-height: 100vh; 
   justify-content: center; 
   padding: 2rem; 
 }
 
-
-
-  height: 100vh;
-  padding-top: 8rem;
-}
-
 .device_grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);  /* Create 3 columns */
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
   background-color: white;
   border-radius: 10px;
-  padding: 2rem;
+  padding: 8rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 900px; /* Limit the width of the grid */
-  grid-template-rows: auto 1fr;  /* Add grid rows configuration */
 }
 
-.search_item {
-  grid-column: span 3; /* Make the search bar span all columns */
+.device_item {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  margin-bottom: 1.5rem; /* Add space below the search bar */
+  cursor: pointer;
+  transition: transform 0.2s;
 }
 
-.search_form {
-  width: 100%;
-  max-width: 400px; /* Optional: Adjust the search bar width */
+.device_avatar {
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
 }
 
-.search_form input {
-  width: 100%;
-  padding: 0.75rem;
+.action_buttons {
+  display: flex;
+  gap: 4rem;
+  display: block; 
+  text-align: center; 
+  margin-top: 2rem;
+  height: 100px;
+}
+
+.button_add, .button_remove {
+  padding: 1rem 2rem;
+  display: inline-block;
+  padding: 1rem;
   font-size: 1rem;
+  color: #007bff;
+  background-color: white;
+  border: 1px solid #007bff;
   border-radius: 5px;
+  cursor: pointer;
+  width: 150px;
+  height: 70px; 
+  margin: 0 1rem;
+  text-align: center;
+  transition: background-color 0.3s;
 }
+
+.button_add:hover, .button_remove:hover {
+  background-color: #f0f8ff;
+}
+/* Slutten på MainPage CSS */
 
 /* Styling for Device Items */
 
@@ -202,6 +212,7 @@ code {
 .button_add, .button_remove {
   display: inline-block;
   padding: 1rem;
+}
 
 .action_buttons {
   display: flex;
