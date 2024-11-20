@@ -37,9 +37,6 @@ function Header({user}) {
                         {user ? (
                             // Display the user's name if they are logged in
                             <div className="d-flex align-items-center">
-                                <Link to={"/user/" + user.touristID + "/Shoppingcart"}>
-                                    <i className="bi bi-cart" style={{ fontSize: '24px', marginRight: '8px' }}></i>
-                                </Link>
                                 <span className="text-white me-3">Welcome, {user.firstName}</span>
                                 <Link to={"http://localhost:3000/"}>
                                     <Button className="btn btn-secondary" >
