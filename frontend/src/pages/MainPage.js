@@ -3,7 +3,16 @@ import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HeaderStartPage from '../components/HeaderStartPage';
 
+
+
 export default function MainPage() {
+
+
+    return(
+        <>
+            <Header/>
+            <></>
+
     return (
         <>
             <HeaderStartPage />

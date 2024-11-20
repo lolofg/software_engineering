@@ -121,6 +121,13 @@ code {
   flex-direction: column;
   align-items: center;
   background-color: #e6f2ff;
+  min-height: 100vh; 
+  justify-content: center; 
+  padding: 2rem; 
+}
+
+
+
   height: 100vh;
   padding-top: 8rem;
 }
@@ -159,10 +166,15 @@ code {
 }
 
 /* Styling for Device Items */
+
 .device_item {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  cursor: pointer;
+  transition: transform 0.2s;
+
   justify-content: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -182,6 +194,16 @@ code {
 
 
 .action_buttons {
+  display: block; 
+  text-align: center; 
+  margin-top: 2rem;
+}
+
+.button_add, .button_remove {
+  display: inline-block;
+  padding: 1rem;
+
+.action_buttons {
   display: flex;
   gap: 4rem;
   margin-top: 2rem;
@@ -196,6 +218,10 @@ code {
   border: 1px solid #007bff;
   border-radius: 5px;
   cursor: pointer;
+  width: 150px;
+  height: 70px; 
+  margin: 0 1rem;
+  text-align: center;
   transition: background-color 0.3s;
 }
 
@@ -204,6 +230,64 @@ code {
 }
 /* Slutten på MainPage CSS */
 
+/* Starten på Popup styling */
+.device_popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup_content {
+  background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    max-width: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.device_avatar.large {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 2rem;
+}
+
+.close_button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.device_item:hover .device_avatar {
+  transform: scale(1.1);
+}
+
+.device_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 10px;
+  max-width: 90%;
+  margin-bottom: 1rem;
+  }
+/* Slutten på Popup styling */
 
 /* Unified StartPage styling */
 .main-page-container {
