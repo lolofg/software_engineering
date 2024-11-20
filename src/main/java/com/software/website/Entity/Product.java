@@ -27,8 +27,9 @@ public class Product {
         return ProductName;
     }
 
-    public void setProductName(String ProductName){
+    public void setProductName(String ProductName) {
         this.ProductName = ProductName;
+    }
 
     public int getProductTypeID(){
         return ProductTypeID;
