@@ -1,7 +1,7 @@
 package com.software.website.Entity;
 
 public class Users {
-    private int User_ID;
+    private int UserID;
     private String FirstName;
     private String LastName;
     private String Email; 
@@ -10,11 +10,11 @@ public class Users {
     }
 
     public int getUserID(){
-        return User_ID;
+        return UserID;
     }
 
     public void setUserID(int userID){
-        this.User_ID = userID; 
+        this.UserID = userID;
     }
 
     public String getFirstName(){
@@ -24,6 +24,7 @@ public class Users {
     public void setFirstName(String firstName) {
         this.FirstName = firstName;
     }
+
     public String getLastName() {
         return LastName;
     }
