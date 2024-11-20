@@ -11,6 +11,7 @@ export default function MainPage() {
             <div className="device_grid">
             <div className="search_item">
             <form className="search_form">
+            <h2>Users</h2>
             <input
             type="search"
             className="form-control form-control-dark"
