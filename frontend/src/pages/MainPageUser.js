@@ -45,7 +45,7 @@ export default function MainPageUser() {
                 {/* Grid med enheter */}
                 <div className="device_grid">
             <div className="search_item">
-            <h2>Enheter</h2>
+            <h2>Devices</h2>
             </div>
                     {devices.map((device, index) => (
                         <div key={index} className="device_item" onClick={() => handleDeviceClick(device)}>
