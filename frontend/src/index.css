@@ -121,11 +121,15 @@ code {
 .device_grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 4rem;
+  gap: 2rem;
   background-color: white;
   border-radius: 10px;
   padding: 8rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto; /* Center the grid */
+  max-width: 1200px; /* Set a larger maximum width */
+  min-width: 700px;
+
 }
 
 .device_item {
@@ -192,6 +196,20 @@ code {
 .device_item:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.search_item {
+  grid-column: 1 / -1; /* Spans all columns */
+  padding-bottom: 1rem; 
+}
+
+.search_form {
+  width: 100%; /* Ensure the form spans the full width */
+}
+
+.form-control {
+  width: 100%; /* Make the input field take the full width */
+  box-sizing: border-box; /* Include padding and borders in width */
 }
 
 .device_avatar {
