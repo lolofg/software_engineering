@@ -44,6 +44,9 @@ export default function MainPageUser() {
             <div className="mainpage_wrapper">
                 {/* Grid med enheter */}
                 <div className="device_grid">
+            <div className="search_item">
+            <h2>Enheter</h2>
+            </div>
                     {devices.map((device, index) => (
                         <div key={index} className="device_item" onClick={() => handleDeviceClick(device)}>
                             <div className="device_avatar"></div>
@@ -54,8 +57,8 @@ export default function MainPageUser() {
 
                 {/* Knappene rett under grid */}
                 <div className="action_buttons">
-                    <button className="button_add">Legg til enhet</button>
-                    <button className="button_remove">Fjern enhet</button>
+                    <button className="button_add">Add Device</button>
+                    <button className="button_remove">Remove Device</button>
                 </div>
 
                 {/* Popup som vises når en enhet er valgt */}
