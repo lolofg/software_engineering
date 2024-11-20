@@ -4,8 +4,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import com.software.website.Entity.Device;
-import com.software.website.service.DeviceService;
+import com.software.website.Entity.Users_Device;
+import com.software.website.service.Users_DeviceService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -14,18 +14,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
-public class DeviceController {
+public class Users_DeviceController {
 
     @Autowired
-    private DeviceService deviceService;
+    private Users_DeviceService deviceService;
 
     @GetMapping("/allDevices")
-    public List<Device> getAllDevices() {
+    public List<Users_Device> getAllDevices() {
         return deviceService.getAllDevices();
     }
 
     @GetMapping("/OneDevice/{id}")
-    public Device getOneDeviceById(@RequestParam String id) {
+    public Users_Device getOneDeviceById(@PathVariable int id) {
         return deviceService.getOneDeviceByID(id);
     }
     

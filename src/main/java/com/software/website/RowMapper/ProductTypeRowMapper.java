@@ -10,8 +10,8 @@ public class ProductTypeRowMapper implements RowMapper<ProductType> {
     @Override
     public ProductType mapRow(ResultSet rs, int rowNum) throws SQLException {
         ProductType obj = new ProductType(); 
-        obj.setProductTypeID(rs.getInt("ProductType_ID"));
-        obj.setProductTypeName(rs.getString("ProductType_Name"));
+        obj.setProductTypeID(rs.getInt("ProductTypeID"));
+        obj.setProductTypeName(rs.getString("ProductTypeName"));
         return obj; 
     }
 

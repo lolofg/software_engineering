@@ -17,8 +17,8 @@ public class ProductTypeService {
         return jdbcTemplate.query("select * from ProductType", new ProductTypeRowMapper()); 
     }
 
-    public ProductType getOneProductTypeByID(int ProductType_ID){
-        return jdbcTemplate.queryForObject("select * from productType where ProductType_ID = ?", new ProductTypeRowMapper(), ProductType_ID); 
+    public ProductType getOneProductTypeByID(int ProductTypeID){
+        return jdbcTemplate.queryForObject("select * from productType where ProductTypeID = ?", new ProductTypeRowMapper(), ProductTypeID);
     }
     
 }

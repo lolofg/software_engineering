@@ -1,42 +1,41 @@
 package com.software.website.Entity;
 
 public class Product {
-
-    private int Product_ID; 
-    private String Product_Name;
-    private int ProductType_ID; 
+  
+    private int ProductID;
+    private String ProductName;
+    private int ProductTypeID;
 
     public Product(){
     }
-
-    public Product(int Product_ID, String Product_Name, int ProductType_ID){
-        this.Product_ID = Product_ID; 
-        this.Product_Name = Product_Name;
-        this.ProductType_ID = ProductType_ID; 
+  
+    public Product(int ProductID, String ProductName, int ProductTypeID){
+        this.ProductID = ProductID;
+        this.ProductName = ProductName;
+        this.ProductTypeID = ProductTypeID;
     }
 
     public int getProductID(){
-        return Product_ID; 
+        return ProductID;
     }
 
-    public void setProductID(int Product_ID){
-        this.Product_ID = Product_ID; 
+    public void setProductID(int ProductID){
+        this.ProductID = ProductID;
     }
 
     public String getProductName(){
-        return Product_Name; 
+        return ProductName;
     }
 
-    public void setProductName(String Product_Name){
-        this.Product_Name = Product_Name; 
-    }
+    public void setProductName(String ProductName){
+        this.ProductName = ProductName;
 
     public int getProductTypeID(){
-        return ProductType_ID; 
+        return ProductTypeID;
     }
 
-    public void setProductTypeID(int ProductType_ID){
-        this.ProductType_ID = ProductType_ID; 
+    public void setProductTypeID(int ProductTypeID){
+        this.ProductTypeID = ProductTypeID;
     }
 
     

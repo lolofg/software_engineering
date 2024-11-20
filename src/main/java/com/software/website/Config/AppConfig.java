@@ -19,7 +19,7 @@ public class AppConfig {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.sqlite.JDBC");
-        dataSource.setUrl("jdbc:sqlite:software/database.sqlite");
+        dataSource.setUrl("jdbc:sqlite:database.sqlite");
 
         return dataSource;
     }
