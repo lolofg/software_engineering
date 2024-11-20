@@ -10,15 +10,16 @@ export default function MainPage() {
         <div className="mainpage_wrapper">
             <div className="device_grid">
             <div className="search_item">
-    <form className="search_form">
-      <input
-        type="search"
-        className="form-control form-control-dark"
-        placeholder="Search..."
-        aria-label="Search"
-      />
-    </form>
-  </div>
+            <form className="search_form">
+            <h2>Users</h2>
+            <input
+            type="search"
+            className="form-control form-control-dark"
+            placeholder="Search..."
+            aria-label="Search"
+             />
+            </form>
+            </div>
                 <div className="device_item">
                     <div className="device_avatar"></div>
                     <p>USER 1</p>
