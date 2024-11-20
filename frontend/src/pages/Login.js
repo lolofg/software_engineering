@@ -1,19 +1,32 @@
 import React from 'react';
-import {Link} from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from "react-router-dom";
+import '../index.css';
 
 export default function Login() {
     return (
-        <div className="container h-100 text-center">
-            <h1 className="h3 mb-3 font-weight-normal">Login</h1>
-            <div>
-                <Link to="/user/1" className={"px-1 text-white"}>
-                    <button className="btn btn-primary btn-lg">login as user</button>
+    <div className="login_page_wrapper">
+        <div className="signUp_Side">
+            <h1 className="logIn_tittel">Log in</h1>
+            <div className="user_avatar"></div>
+
+            <input type="email" placeholder="Email" className="input_field" />
+            <input type="password" placeholder="Password" className="input_field" />
+
+            <button className="button_signUp">Log in</button>
+            <div className='button_container'>
+                <Link to="/user/1" className={"user"}>
+                    <button className="button_signUp1">log in as user</button>
                 </Link>
-                <Link to="/admin" className={"px-1 text-white"}>
-                    <button className="btn btn-primary btn-lg">login as Admin</button>
+                <Link to="/admin" className={"admin"}>
+                    <button className="button_signUp1">log in as Admin</button>
                 </Link>
             </div>
+
+            <div className="links">
+                <Link to="/forgot_password" className="link_item">Glemt passord?</Link>
+                <Link to="/create_account" className="link_item">Opprette bruker?</Link>
+            </div>
         </div>
-    )
+    </div>
+    );
 }

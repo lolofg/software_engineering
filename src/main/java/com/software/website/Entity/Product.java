@@ -1,14 +1,14 @@
 package com.software.website.Entity;
 
 public class Product {
-
+  
     private int ProductID;
     private String ProductName;
     private int ProductTypeID;
 
     public Product(){
     }
-
+  
     public Product(int ProductID, String ProductName, int ProductTypeID){
         this.ProductID = ProductID;
         this.ProductName = ProductName;
@@ -29,7 +29,6 @@ public class Product {
 
     public void setProductName(String ProductName){
         this.ProductName = ProductName;
-    }
 
     public int getProductTypeID(){
         return ProductTypeID;
