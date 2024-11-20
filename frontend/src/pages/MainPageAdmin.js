@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from "../components/Header";
+import HeaderAdmin from "../components/HeaderAdmin";
 
 export default function MainPage() {
     return (
         <>
-        <Header />
+        <HeaderAdmin />
         <div className="mainpage_wrapper">
             <div className="device_grid">
             <div className="search_item">
