@@ -26,7 +26,7 @@ function Header({user}) {
                                 )
                         }
                         <li><a href="#" className="nav-link px-2 text-white">Settings</a></li>
-                        <li><a href="#" className="nav-link px-2 text-white">Contact</a></li>
+                        <li><a href="#footer" className="nav-link px-2 text-white">Contact</a></li>
                     </ul>
 
                     <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">

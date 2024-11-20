@@ -2,12 +2,9 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HeaderStartPage from '../components/HeaderStartPage';
-import Header from '../components/Header';
-
-
+import Footer from '../components/Footer';
 
 export default function MainPage() {
-            <Header/>
     return (
         <>
             <HeaderStartPage />
@@ -17,6 +14,7 @@ export default function MainPage() {
                     <p className="lead text-light">Control, automate, and secure your home effortlessly.</p>
                 </div>
             </div>
+            <Footer />
         </>
     );
 }

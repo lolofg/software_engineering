@@ -26,7 +26,7 @@ function HeaderStartPage({user}) {
                                 )
                         }
                         <li><a href="#" className="nav-link px-2 text-white">Settings</a></li>
-                        <li><a href="#" className="nav-link px-2 text-white">Contact</a></li>
+                        <li><a href="#footer" className="nav-link px-2 text-white">Contact</a></li>
                         <li><a href="#" className="nav-link px-2 text-white">Help</a></li>
                     </ul>
 

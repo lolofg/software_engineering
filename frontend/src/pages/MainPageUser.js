@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import {Link, useParams} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "../components/Header";
+import Footer from '../components/Footer';
+
 
 export default function MainPageUser() {
     const [selectedDevice, setSelectedDevice] = useState(null);
@@ -70,6 +72,7 @@ export default function MainPageUser() {
                     </div>
                 )}
             </div>
+            <Footer />
         </>
     );
 }
