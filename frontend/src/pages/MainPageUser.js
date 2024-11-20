@@ -8,11 +8,11 @@ export default function MainPageUser() {
 
     const devices = [
         { name: 'TV' },
-        { name: 'GARDINER' },
-        { name: 'HØYTALER' },
-        { name: 'MIKROBØLGEOVN' },
-        { name: 'RINGEKLOKKE' },
-        { name: 'HUS' }
+        { name: 'CURTAINS' },
+        { name: 'SPEAKERS' },
+        { name: 'MICROWAVE' },
+        { name: 'DOORBELL' },
+        { name: 'HOUSE' }
     ];
 
     const handleDeviceClick = (device) => {

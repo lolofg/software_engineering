@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import MainPage from "./pages/MainPage";
 import MainPageUser from "./pages/MainPageUser";
 import MainPageAdmin from "./pages/MainPageAdmin";
+import SignUpPage from "./pages/SignUpPage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
                 <Route path="/Login" element={<Login/>}/>
                 <Route path="/User/:UserID" element={<MainPageUser/>}/>
                 <Route path="/Admin" element={<MainPageAdmin/>}/>
+                <Route path="/SignUpPage" element={<SignUpPage/>}/>
             </Routes>
         </BrowserRouter>
     </div>

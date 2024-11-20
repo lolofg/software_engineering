@@ -21,27 +21,27 @@ export default function MainPage() {
   </div>
                 <div className="device_item">
                     <div className="device_avatar"></div>
-                    <p>BRUKER 1</p>
+                    <p>USER 1</p>
                 </div>
                 <div className="device_item">
                     <div className="device_avatar"></div>
-                    <p>BRUKER 2</p>
+                    <p>USER  2</p>
                 </div>
                 <div className="device_item">
                     <div className="device_avatar"></div>
-                    <p>BRUKER 3</p>
+                    <p>USER  3</p>
                 </div>
                 <div className="device_item">
                     <div className="device_avatar"></div>
-                    <p>BRUKER 4</p>
+                    <p>USER 4</p>
                 </div>
                 <div className="device_item">
                     <div className="device_avatar"></div>
-                    <p>BRUKER 5</p>
+                    <p>USER  5</p>
                 </div>
                 <div className="device_item">
                     <div className="device_avatar"></div>
-                    <p>BRUKER 6</p>
+                    <p>USER  6</p>
                 </div>
             </div>
         </div>

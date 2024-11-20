@@ -51,7 +51,7 @@ function HeaderStartPage({user}) {
                         ) : (
                             <>
                                 <Link to="/login" className="btn btn-primary me-2">Log In</Link>
-                                <Link to="/signup" className="btn btn-secondary">Sign Up</Link>
+                                <Link to="/SignUpPage" className="btn btn-secondary">Sign Up</Link>
                             </>
                         )}
                     </div>

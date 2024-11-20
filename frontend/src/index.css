@@ -354,6 +354,25 @@ code {
     right: 25%;
 }
 
+/*  Sign Up Page*/
+.SignUpPage_AlreadyHaveAccount {
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+.links_SignUpPage {
+  display: flex;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+.SignUpPage_AlreadyHaveAccount .link_item {
+  margin-left: 5px;
+}
+/*  Slutten Up Page */
 @keyframes float {
     0%, 100% {
         transform: translateY(0);

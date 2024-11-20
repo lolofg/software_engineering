@@ -23,8 +23,8 @@ export default function Login() {
             </div>
 
             <div className="links">
-                <Link to="/forgot_password" className="link_item">Glemt passord?</Link>
-                <Link to="/create_account" className="link_item">Opprette bruker?</Link>
+                <Link to="#" className="link_item">Forgot Password?</Link>
+                <Link to="/SignUpPage" className="link_item">Sign up?</Link>
             </div>
         </div>
     </div>
