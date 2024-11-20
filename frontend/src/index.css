@@ -120,24 +120,18 @@ code {
   flex-direction: column;
   align-items: center;
   background-color: #e6f2ff;
-  height: 100vh;
-  padding-top: 8rem;
+  min-height: 100vh; 
+  justify-content: center; 
+  padding: 2rem; 
 }
 
-.device_grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 4rem;
-  background-color: white;
-  border-radius: 10px;
-  padding: 8rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
 
 .device_item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
 
 .device_avatar {
@@ -149,20 +143,24 @@ code {
 }
 
 .action_buttons {
-  display: flex;
-  gap: 4rem;
+  display: block; 
+  text-align: center; 
   margin-top: 2rem;
-  height: 100px;
 }
 
 .button_add, .button_remove {
-  padding: 1rem 2rem;
+  display: inline-block;
+  padding: 1rem;
   font-size: 1rem;
   color: #007bff;
   background-color: white;
   border: 1px solid #007bff;
   border-radius: 5px;
   cursor: pointer;
+  width: 150px;
+  height: 70px; 
+  margin: 0 1rem;
+  text-align: center;
   transition: background-color 0.3s;
 }
 
@@ -190,7 +188,7 @@ code {
     border-radius: 10px;
     padding: 2rem;
     text-align: center;
-    width: 300px;
+    max-width: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
     display: flex;
@@ -214,12 +212,6 @@ code {
   font-size: 1.5rem;
   cursor: pointer;
 }
-
-.device_item {
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
 .device_item:hover .device_avatar {
   transform: scale(1.1);
 }
@@ -228,30 +220,10 @@ code {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  padding: 2rem;
   background-color: white;
   border-radius: 10px;
-  padding: 2rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.action_buttons {
-  display: flex;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.button_add, .button_remove {
-  padding: 1rem 2rem;
-  font-size: 1rem;
-  color: #007bff;
-  background-color: white;
-  border: 1px solid #007bff;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.button_add:hover, .button_remove:hover {
-  background-color: #f0f8ff;
-}
+  max-width: 90%;
+  margin-bottom: 1rem;
+  }
 /* Slutten på Popup styling */
