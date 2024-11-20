@@ -12,7 +12,11 @@ function App() {
             <Routes>
                 <Route path="/" element={<MainPage/>}/>
                 <Route path="/Login" element={<Login/>}/>
+
                 <Route path="/User/:UserID" element={<MainPageUser/>}/>
+
+                <Route path="/User/:UserID" element={<MainPage/>}/>
+
                 <Route path="/Admin" element={<MainPageAdmin/>}/>
             </Routes>
         </BrowserRouter>
