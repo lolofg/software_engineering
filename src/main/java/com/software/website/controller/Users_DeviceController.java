@@ -31,7 +31,7 @@ public class Users_DeviceController {
         return ResponseEntity.ok("Device added successfully.");
     }
 
-    @DeleteMapping("DeleteDevice/{id}")
+    @DeleteMapping("DeleteOneDevice/{id}")
     public ResponseEntity<String> removeDevice(@PathVariable int id) {
         deviceService.removeDevice(id);
         return ResponseEntity.ok("Device removed successfully.");
