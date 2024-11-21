@@ -1,4 +1,4 @@
-package com.software.website.service;
+package com.software.website.Service;
 
 import java.util.List;
 

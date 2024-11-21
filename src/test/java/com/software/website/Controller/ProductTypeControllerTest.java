@@ -1,5 +1,4 @@
-
-package com.software.website.controller;
+package com.software.website.Controller;
 
 
 import static org.mockito.Mockito.*;
@@ -19,7 +18,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import com.software.website.Entity.ProductType;
-import com.software.website.service.ProductTypeService;
+import com.software.website.Service.ProductTypeService;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 

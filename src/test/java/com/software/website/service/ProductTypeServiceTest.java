@@ -7,6 +7,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
+import com.software.website.Service.ProductTypeService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -20,7 +21,7 @@ import com.software.website.RowMapper.ProductTypeRowMapper;
 public class ProductTypeServiceTest {
 
     @InjectMocks
-    private ProductTypeService productTypeService; 
+    private ProductTypeService productTypeService;
 
     @Mock
     private JdbcTemplate jdbcTemplate; 

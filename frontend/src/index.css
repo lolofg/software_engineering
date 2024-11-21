@@ -545,6 +545,13 @@ ul.device_list {
 #icon_avatar{
   font-size: 60px;
 }
+.remove_button {
+  background: none;
+  border: none;
+  color: red;
+  font-size: 1.5em;
+  cursor: pointer;
+}
 /*  Slutten Up Page */
 @keyframes float {
     0%, 100% {

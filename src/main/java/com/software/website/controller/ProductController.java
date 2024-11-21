@@ -1,4 +1,4 @@
-package com.software.website.controller;
+package com.software.website.Controller;
 
 
 import java.util.List;
@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.software.website.Entity.Product;
-import com.software.website.service.ProductService;
+import com.software.website.Service.ProductService;
 
 
 @RestController

@@ -2,6 +2,7 @@ package com.software.website.service;
 
 import com.software.website.Entity.Users_Device;
 import com.software.website.RowMapper.Users_DeviceRowMapper;
+import com.software.website.Service.Users_DeviceService;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
@@ -14,7 +15,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-class Users_DeviceServiceTest {
+public class UsersDeviceServiceTest {
 
     @Mock
     private JdbcTemplate jdbcTemplate;
@@ -22,8 +23,7 @@ class Users_DeviceServiceTest {
     @InjectMocks
     private Users_DeviceService deviceService;
 
-    public Users_DeviceServiceTest() {
-        // Initialize mocks
+    public UsersDeviceServiceTest() {
         org.mockito.MockitoAnnotations.openMocks(this);
     }
 

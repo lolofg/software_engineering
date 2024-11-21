@@ -11,6 +11,8 @@ export default function MainPageUser() {
     const [devices, setDevices] = useState([]);
     const [availableDevices, setAvailableDevices] = useState([]);
     const [showAddDevicePopup, setShowAddDevicePopup] = useState(false);
+    const [isRemoveMode, setIsRemoveMode] = useState(false);
+
 
     useEffect(() => {
         if (UserID) {
@@ -88,6 +90,22 @@ export default function MainPageUser() {
             .catch(error => console.error(error));
     };
 
+    const handleRemoveDevice = (deviceID) => {
+        fetch('http://localhost:8080/DeleteOneDevice/' + deviceID, {
+            method: 'DELETE',
+        })
+            .then(response => {
+                if (response.ok) {
+                    alert("Device removed successfully!");
+                    setDevices(devices.filter(device => device.deviceID !== deviceID));
+                } else {
+                    alert("Failed to remove device.");
+                }
+            })
+            .catch(error => console.error(error));
+    };
+
+
     return (
         <>
             <Header user={User}/>
@@ -97,16 +115,22 @@ export default function MainPageUser() {
                         <h2>Devices</h2>
                     </div>
                     {devices.map((device, index) => (
-                        <div key={index} className="device_item" onClick={() => handleDeviceClick(device)}>
+                        <div key={index} className="device_item">
                             <i className="bi bi-cloud-download-fill" id='icon_avatar'></i>
                             <p>{device.name}</p>
+                            {isRemoveMode && (
+                                <button className="remove_button" onClick={() => handleRemoveDevice(device.deviceID)}>×</button>
+                            )}
                         </div>
                     ))}
                 </div>
 
                 <div className="action_buttons">
                     <button className="button_add" onClick={fetchAvailableDevices}>Add Device</button>
-                    <button className="button_remove">Remove Device</button>
+                    <button className="button_remove" onClick={() => setIsRemoveMode(!isRemoveMode)}>
+                        {isRemoveMode ? "Cancel Remove" : "Remove Device"}
+                    </button>
+
                 </div>
 
                 {selectedDevice && (
