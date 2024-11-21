@@ -10,7 +10,6 @@ public class Users_Device {
     public Users_Device() {
 
     }
-
     public Users_Device(int DeviceID, int UsersID, int ProductID, String Name){
         this.DeviceID = DeviceID;
         this.UsersID = UsersID;
@@ -43,17 +42,12 @@ public class Users_Device {
         this.ProductID = ProductID;
     }
 
-    public String getName(){
+    public String getName() {
         return Name;
     }
 
     public void setName(String Name) {
-        this.Name = Name; 
+        this.Name = Name;
     }
 
-
-
-
-
 }
- 
