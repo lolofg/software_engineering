@@ -8,9 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import com.software.website.Entity.Users_Device;
 import com.software.website.service.Users_DeviceService;
 
-
-
-
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
 public class Users_DeviceController {
@@ -28,7 +25,7 @@ public class Users_DeviceController {
         return deviceService.getOneDeviceByID(id);
     }
 
-    @PostMapping("AddIventory/{id}")
+    @PostMapping("AddDeviceToUser/{id}")
     public ResponseEntity<String> addDevice(@RequestBody Users_Device device) {
         deviceService.addDevice(device);
         return ResponseEntity.ok("Device added successfully.");
