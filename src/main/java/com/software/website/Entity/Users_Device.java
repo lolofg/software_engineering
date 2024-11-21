@@ -17,14 +17,6 @@ public class Users_Device {
         this.Name = Name;
     }
 
-
-    public Users_Device(int DeviceID, int UsersID, int ProductID, String Name){
-        this.DeviceID = DeviceID;
-        this.UsersID = UsersID;
-        this.ProductID = ProductID;
-        this.Name = Name;
-    }
-
     public int getDeviceID(){
         return DeviceID;
     }
