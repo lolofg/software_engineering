@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.software.website.Entity.Users_Device;
-import com.software.website.Service.Users_DeviceService;
+import com.software.website.service.Users_DeviceService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")

@@ -1,7 +1,7 @@
 package com.software.website.Controller;
 
 import com.software.website.Entity.Users;
-import com.software.website.Service.UserService;
+import com.software.website.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;

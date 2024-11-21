@@ -1,4 +1,4 @@
-package com.software.website.Service;
+package com.software.website.service;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,7 +6,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import com.software.website.Entity.Users;
 import com.software.website.RowMapper.UserRowMapper;
-import org.springframework.web.bind.annotation.PathVariable;
 
 @Service
 public class UserService {

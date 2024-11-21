@@ -11,7 +11,7 @@ import org.mockito.MockitoAnnotations;
 import java.util.Arrays;
 import java.util.List;
 
-import com.software.website.Service.ProductService;
+import com.software.website.service.ProductService;
 import com.software.website.Entity.Product;
 
 class ProductControllerTest {

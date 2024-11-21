@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.software.website.Entity.Product;
-import com.software.website.Service.ProductService;
+import com.software.website.service.ProductService;
 
 
 @RestController

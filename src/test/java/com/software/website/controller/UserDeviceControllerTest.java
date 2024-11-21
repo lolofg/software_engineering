@@ -1,6 +1,6 @@
 package com.software.website.Controller;
 
-import com.software.website.Service.Users_DeviceService;
+import com.software.website.service.Users_DeviceService;
 import com.software.website.Entity.Users_Device;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
