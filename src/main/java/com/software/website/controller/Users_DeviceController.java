@@ -28,7 +28,7 @@ public class Users_DeviceController {
         return deviceService.getOneDeviceByID(id);
     }
 
-    @PostMapping
+    @PostMapping("AddIventory/{id}")
     public ResponseEntity<String> addDevice(@RequestBody Users_Device device) {
         deviceService.addDevice(device);
         return ResponseEntity.ok("Device added successfully.");
