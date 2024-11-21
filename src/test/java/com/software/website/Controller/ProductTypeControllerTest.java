@@ -1,4 +1,6 @@
+
 package com.software.website.controller;
+
 
 import static org.mockito.Mockito.*;
 
@@ -75,5 +77,4 @@ public class ProductTypeControllerTest {
 
         verify(productTypeService).getAllProductTypes();
     }
-    
 }
