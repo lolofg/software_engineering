@@ -1,4 +1,4 @@
-package com.software.website.controller;
+package com.software.website.Controller;
 
 import com.software.website.service.Users_DeviceService;
 import com.software.website.Entity.Users_Device;
@@ -16,6 +16,7 @@ import java.util.List;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import com.software.website.controller.Users_DeviceController;
 
 @WebMvcTest(Users_DeviceController.class) 
 public class UserDeviceControllerTest {

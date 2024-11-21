@@ -1,4 +1,4 @@
-package com.software.website.controller;
+package com.software.website.Controller;
 
 import com.software.website.Entity.Users;
 import com.software.website.service.UserService;
@@ -15,6 +15,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.mockito.BDDMockito.given;
+import com.software.website.controller.UserController;
+
 
 @WebMvcTest(UserController.class)
 public class UserControllerTest {

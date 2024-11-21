@@ -1,4 +1,4 @@
-package com.software.website.controller;
+package com.software.website.Controller;
 
 
 import static org.mockito.Mockito.*;

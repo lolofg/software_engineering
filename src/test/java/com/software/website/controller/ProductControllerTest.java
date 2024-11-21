@@ -1,4 +1,4 @@
-package com.software.website.controller;
+package com.software.website.Controller;
 
 import static org.mockito.Mockito.*;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -13,6 +13,7 @@ import java.util.List;
 
 import com.software.website.service.ProductService;
 import com.software.website.Entity.Product;
+import com.software.website.controller.ProductController;
 
 class ProductControllerTest {
 
