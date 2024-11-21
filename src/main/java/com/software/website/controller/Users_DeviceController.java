@@ -18,12 +18,12 @@ public class Users_DeviceController {
     @Autowired
     private Users_DeviceService deviceService;
 
-    @GetMapping("/allDevices")
+    @GetMapping("/GetallDevices")
     public List<Users_Device> getAllDevices() {
         return deviceService.getAllDevices();
     }
 
-    @GetMapping("/OneDevice/{id}")
+    @GetMapping("/GetOneDevice/{id}")
     public Users_Device getOneDeviceById(@PathVariable int id) {
         return deviceService.getOneDeviceByID(id);
     }
@@ -34,9 +34,14 @@ public class Users_DeviceController {
         return ResponseEntity.ok("Device added successfully.");
     }
 
-    @DeleteMapping("DeleteIventory/{id}")
+    @DeleteMapping("DeleteDevice/{id}")
     public ResponseEntity<String> removeDevice(@PathVariable int id) {
         deviceService.removeDevice(id);
         return ResponseEntity.ok("Device removed successfully.");
+    }
+
+    @GetMapping("/GetOneUserDevices/{id}")
+    public List<Users_Device> GetOneUsersDevices(@PathVariable int id) {
+        return deviceService.getOneUsersDevices(id);
     }
 }
