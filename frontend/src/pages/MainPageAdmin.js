@@ -1,9 +1,18 @@
-import React from 'react';
-import { Link } from "react-router-dom";
+import React, {useEffect, useState} from 'react';
+import {Link, useParams} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HeaderAdmin from "../components/HeaderAdmin";
 
 export default function MainPage() {
+    const [Users, setUser] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:8080/allUsers')
+            .then(response => response.json())
+            .then(data => setUser(data))
+            .catch(error => console.error(error));
+    }, []);
+
     return (
         <>
         <HeaderAdmin />
@@ -19,31 +28,13 @@ export default function MainPage() {
             aria-label="Search"
              />
             </form>
+                {Users.map((User, index) => (
+                    <div key={index} className="user_item">
+                        <i className="bi bi-person" id='icon_avatar'></i>
+                        <p>{User.firstName + " " + User.lastName}</p>
+                    </div>
+                ))}
             </div>
-                <div className="device_item">
-                <i class="bi bi-person-fill" id='icon_avatar'></i>
-                    <p>USER 1</p>
-                </div>
-                <div className="device_item">
-                <i class="bi bi-person-fill" id='icon_avatar'></i>
-                    <p>USER  2</p>
-                </div>
-                <div className="device_item">
-                <i class="bi bi-person-fill" id='icon_avatar'></i>
-                    <p>USER  3</p>
-                </div>
-                <div className="device_item">
-                <i class="bi bi-person-fill" id='icon_avatar'></i>
-                    <p>USER 4</p>
-                </div>
-                <div className="device_item">
-                <i class="bi bi-person-fill" id='icon_avatar'></i>
-                    <p>USER  5</p>
-                </div>
-                <div className="device_item">
-                <i class="bi bi-person-fill" id='icon_avatar'></i>
-                    <p>USER  6</p>
-                </div>
             </div>
         </div>
     </>

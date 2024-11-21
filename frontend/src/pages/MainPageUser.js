@@ -88,8 +88,6 @@ export default function MainPageUser() {
             .catch(error => console.error(error));
     };
 
-
-
     return (
         <>
             <Header user={User}/>

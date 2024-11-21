@@ -193,6 +193,23 @@ code {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.user_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  cursor: pointer;
+  transition: transform 0.2s;
+
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.user_item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
 .device_item:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
