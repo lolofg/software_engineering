@@ -116,8 +116,10 @@ export default function MainPageUser() {
                     </div>
                     {devices.map((device, index) => (
                         <div key={index} className="device_item">
+                            <div onClick={() => handleDeviceClick(device)}>
                             <i className="bi bi-cloud-download-fill" id='icon_avatar'></i>
                             <p>{device.name}</p>
+                        </div>
                             {isRemoveMode && (
                                 <button className="remove_button" onClick={() => handleRemoveDevice(device.deviceID)}>×</button>
                             )}
