@@ -1,4 +1,4 @@
-package com.software.website.Controller;
+package com.software.website.controller;
 
 import com.software.website.service.Users_DeviceService;
 import com.software.website.Entity.Users_Device;

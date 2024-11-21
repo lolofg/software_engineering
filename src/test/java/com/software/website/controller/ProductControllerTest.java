@@ -1,4 +1,4 @@
-package com.software.website.Controller;
+package com.software.website.controller;
 
 import static org.mockito.Mockito.*;
 import static org.assertj.core.api.Assertions.assertThat;

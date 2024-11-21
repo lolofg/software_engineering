@@ -1,4 +1,4 @@
-package com.software.website.Controller;
+package com.software.website.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
