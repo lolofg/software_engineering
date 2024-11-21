@@ -39,4 +39,14 @@ public class Users_DeviceController {
         deviceService.removeDevice(id);
         return ResponseEntity.ok("Device removed successfully.");
     }
+
+
+
+    
+
+
+
+
+
+
 }
