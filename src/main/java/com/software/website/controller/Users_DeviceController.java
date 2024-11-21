@@ -28,19 +28,15 @@ public class Users_DeviceController {
         return deviceService.getOneDeviceByID(id);
     }
 
-    @PostMapping
+    @PostMapping("AddIventory/{id}")
     public ResponseEntity<String> addDevice(@RequestBody Users_Device device) {
         deviceService.addDevice(device);
         return ResponseEntity.ok("Device added successfully.");
     }
 
-    @DeleteMapping("Iventory/{id}")
+    @DeleteMapping("DeleteIventory/{id}")
     public ResponseEntity<String> removeDevice(@PathVariable int id) {
         deviceService.removeDevice(id);
         return ResponseEntity.ok("Device removed successfully.");
     }
-    
-    
-    
-    
 }
