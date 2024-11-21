@@ -8,9 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import com.software.website.Entity.Users_Device;
 import com.software.website.service.Users_DeviceService;
 
-
-
-
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
 public class Users_DeviceController {

@@ -8,14 +8,29 @@ import Footer from '../components/Footer';
 export default function MainPageUser() {
     const [selectedDevice, setSelectedDevice] = useState(null);
 
-    const devices = [
-        { name: 'TV' },
-        { name: 'CURTAINS' },
-        { name: 'SPEAKERS' },
-        { name: 'MICROWAVE' },
-        { name: 'DOORBELL' },
-        { name: 'HOUSE' }
-    ];
+    const [User, setUser] = useState({});
+    const { UserID } = useParams();
+
+    const [devices, setDevices] = useState([]);
+
+    useEffect(() => {
+        if (UserID) {
+            fetch('http://localhost:8080/user/' + UserID)
+                .then(response => response.json())
+                .then(data => setUser(data))
+                .catch(error => console.error(error));
+
+            fetch('http://localhost:8080/GetOneUserDevices/' + UserID)
+                .then(response => response.json())
+                .then(data => setDevices(data))
+                .catch(error => console.error(error));
+        }
+
+        else {
+            setUser(null)
+        }
+
+    }, [devices, UserID]);
 
     const handleDeviceClick = (device) => {
         setSelectedDevice(device);
@@ -25,8 +40,6 @@ export default function MainPageUser() {
         setSelectedDevice(null);
     };
 
-    const [User, setUser] = useState({});
-    const { UserID } = useParams();
 
     useEffect(() => {
         if (UserID) {
@@ -40,15 +53,16 @@ export default function MainPageUser() {
         }
     }, [UserID]);
 
+
     return (
         <>
             <Header user={User}/>
             <div className="mainpage_wrapper">
                 {/* Grid med enheter */}
                 <div className="device_grid">
-            <div className="search_item">
-            <h2>Devices</h2>
-            </div>
+                    <div className="search_item">
+                        <h2>Devices</h2>
+                    </div>
                     {devices.map((device, index) => (
                         <div key={index} className="device_item" onClick={() => handleDeviceClick(device)}>
                             <i class="bi bi-cloud-download-fill" id='icon_avatar'></i>
