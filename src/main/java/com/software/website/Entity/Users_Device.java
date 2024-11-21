@@ -11,7 +11,8 @@ public class Users_Device {
 
     }
 
-    public int getDeviceID(){
+
+    public int getDeviceID() {
         return DeviceID;
     }
 
@@ -35,17 +36,12 @@ public class Users_Device {
         this.ProductID = ProductID;
     }
 
-    public String getName(){
+    public String getName() {
         return Name;
     }
 
     public void setName(String Name) {
-        this.Name = Name; 
+        this.Name = Name;
     }
 
-
-
-
-
 }
- 
