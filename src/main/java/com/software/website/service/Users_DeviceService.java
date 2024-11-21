@@ -35,4 +35,8 @@ public class Users_DeviceService {
     }
 
 
+    public List<Users_Device> getOneUsersDevices(int UserID) {
+        String sql = "SELECT * FROM Users_device WHERE UsersID = ?";
+        return jdbcTemplate.query(sql, new Users_DeviceRowMapper(), UserID);
+    }
 }
