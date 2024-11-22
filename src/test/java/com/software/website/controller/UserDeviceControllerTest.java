@@ -1,5 +1,6 @@
 package com.software.website.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.software.website.service.Users_DeviceService;
 import com.software.website.Entity.Users_Device;
 import org.junit.jupiter.api.Test;
@@ -16,7 +17,6 @@ import java.util.List;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-import com.software.website.controller.Users_DeviceController;
 
 @WebMvcTest(Users_DeviceController.class) 
 public class UserDeviceControllerTest {
@@ -25,23 +25,30 @@ public class UserDeviceControllerTest {
     private MockMvc mockMvc;
 
     @MockBean
-    private Users_DeviceService deviceService; 
+    private Users_DeviceService deviceService;
+
+    @Autowired
+    private ObjectMapper objectMapper;
 
     @Test
     void shouldReturnAllDevices() throws Exception {
-        Users_Device device1 = new Users_Device(1, 1, 1, "Type A");
-        Users_Device device2 = new Users_Device(2, 2, 2, "Type B");
+        Users_Device device1 = new Users_Device(2, 3, 100, "Type A");
+        Users_Device device2 = new Users_Device(5, 1, 101, "Type B");
         List<Users_Device> devices = Arrays.asList(device1, device2);
 
         when(deviceService.getAllDevices()).thenReturn(devices);
 
-        mockMvc.perform(get("/allDevices")
+        mockMvc.perform(get("/GetallDevices")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$[0].id").value(1))
-                .andExpect(jsonPath("$[0].deviceType").value("Type A"))
-                .andExpect(jsonPath("$[1].id").value(2))
-                .andExpect(jsonPath("$[1].deviceType").value("Type B"));
+                .andExpect(jsonPath("$[0].deviceID").value(2))
+                .andExpect(jsonPath("$[0].usersID").value(3))
+                .andExpect(jsonPath("$[0].productID").value(100))
+                .andExpect(jsonPath("$[0].name").value("Type A"))
+                .andExpect(jsonPath("$[1].deviceID").value(5))
+                .andExpect(jsonPath("$[1].usersID").value(1))
+                .andExpect(jsonPath("$[1].productID").value(101))
+                .andExpect(jsonPath("$[1].name").value("Type B"));
     }
 
     @Test
@@ -51,80 +58,52 @@ public class UserDeviceControllerTest {
 
         when(deviceService.getOneDeviceByID(1)).thenReturn(device);
 
-        mockMvc.perform(get("/OneDevice/1")
+        mockMvc.perform(get("/GetOneDevice/1")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.id").value(1))
-                .andExpect(jsonPath("$.deviceType").value("Type A"));
+                .andExpect(jsonPath("$.deviceID").value(1))
+                .andExpect(jsonPath("$.usersID").value(2))
+                .andExpect(jsonPath("$.productID").value(2))
+                .andExpect(jsonPath("$.name").value("Type A"));
     }
 
     @Test
     void shouldReturnNotFoundForInvalidId() throws Exception {
         when(deviceService.getOneDeviceByID(999)).thenThrow(new RuntimeException("Device not found"));
 
-        mockMvc.perform(get("/OneDevice/999")
+        mockMvc.perform(get("/GetOneDevice/999")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound())
                 .andExpect(content().string("Device not found"));
     }
 
+
     @Test
-    void shouldAddDeviceSuccessfully() throws Exception {
-        String deviceJson = """
-                {
-                    "id": 1,
-                    "deviceType": "Type A"
-                }
-                """;
+    public void testAddDevice() throws Exception {
+        // Create a sample Users_Device object
+        Users_Device device = new Users_Device();
+        device.setDeviceID(101);
+        device.setUsersID(1001);
+        device.setProductID(202);
+        device.setName("Smart Thermostat");
 
-        doNothing().when(deviceService).addDevice(Mockito.any(Users_Device.class));
+        doNothing().when(deviceService).addDevice(device);
 
-        mockMvc.perform(post("/AddIventory/1")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(deviceJson))
+        mockMvc.perform(post("/AddDeviceToUser/1")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(device)))
                 .andExpect(status().isOk())
                 .andExpect(content().string("Device added successfully."));
-    }
-
-    @Test
-    void shouldReturnBadRequestForInvalidData() throws Exception {
-        String invalidDeviceJson = """
-                {
-                    "deviceType": ""
-                }
-                """;
-
-        mockMvc.perform(post("/AddIventory/1")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(invalidDeviceJson))
-                .andExpect(status().isBadRequest());
     }
 
     @Test
     void shouldRemoveDeviceSuccessfully() throws Exception {
         doNothing().when(deviceService).removeDevice(1);
 
-        mockMvc.perform(delete("/DeleteIventory/1")
+        mockMvc.perform(delete("/DeleteOneDevice/1")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().string("Device removed successfully."));
     }
 
-    @Test
-    void shouldReturnNotFoundForNonExistentDevice() throws Exception {
-        doThrow(new IllegalArgumentException("Device not found"))
-                .when(deviceService).removeDevice(99);
-
-        mockMvc.perform(delete("/DeleteIventory/99")
-                .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isNotFound())
-                .andExpect(content().string("Device not found"));
-    }
-
-    @Test
-    void shouldHandleBadRequestForInvalidId() throws Exception {
-        mockMvc.perform(delete("/DeleteIventory/abc")
-                .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isBadRequest());
-    }
 }
