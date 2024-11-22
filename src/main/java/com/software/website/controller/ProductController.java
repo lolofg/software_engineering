@@ -4,13 +4,10 @@ package com.software.website.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.software.website.Entity.Product;
 import com.software.website.service.ProductService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 @RestController
@@ -26,7 +23,7 @@ public class ProductController {
     }
 
     @GetMapping("/OneProduct/{id}")
-    public Product getOneProduct(@RequestParam int id) {
+    public Product getOneProduct(@PathVariable int id) {
         return productService.getOneProductID(id);
     }
     

@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import {Button} from "react-bootstrap";
 
-function Header({user}) {
+function HeaderStartPage({user}) {
 
     return (
         <header className="p-3 bg-dark text-white">
@@ -27,6 +27,7 @@ function Header({user}) {
                         }
                         <li><a href="#" className="nav-link px-2 text-white">Settings</a></li>
                         <li><a href="#footer" className="nav-link px-2 text-white">Contact</a></li>
+                        <li><a href="#" className="nav-link px-2 text-white">Help</a></li>
                     </ul>
 
                     <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
@@ -37,6 +38,9 @@ function Header({user}) {
                         {user ? (
                             // Display the user's name if they are logged in
                             <div className="d-flex align-items-center">
+                                <Link to={"/user/" + user.touristID + "/Shoppingcart"}>
+                                    <i className="bi bi-cart" style={{ fontSize: '24px', marginRight: '8px' }}></i>
+                                </Link>
                                 <span className="text-white me-3">Welcome, {user.firstName}</span>
                                 <Link to={"http://localhost:3000/"}>
                                     <Button className="btn btn-secondary" >
@@ -57,4 +61,4 @@ function Header({user}) {
     );
 }
 
-export default Header;
+export default HeaderStartPage;

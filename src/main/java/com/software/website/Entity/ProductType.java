@@ -1,27 +1,27 @@
 package com.software.website.Entity;
 
 public class ProductType {
-    private int ProductType_ID; 
-    private String ProductType_Name; 
+    private int ProductTypeID;
+    private String ProductTypeName;
 
     public ProductType(){
     }
 
     public int getProductTypeID() {
-        return ProductType_ID;
+        return ProductTypeID;
     }
 
-    public void setProductTypeID(int ProductType_ID) {
-        this.ProductType_ID = ProductType_ID;
+    public void setProductTypeID(int ProductTypeID) {
+        this.ProductTypeID = ProductTypeID;
     }
 
     
     public String getProductTypeName() {
-        return ProductType_Name;
+        return ProductTypeName;
     }
 
-    public void setProductTypeName(String ProductType_Name) {
-        this.ProductType_Name = ProductType_Name;
+    public void setProductTypeName(String ProductTypeName) {
+        this.ProductTypeName = ProductTypeName;
     }
 
 }

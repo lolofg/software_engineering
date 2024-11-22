@@ -12,10 +12,10 @@ public class ProductService {
     private JdbcTemplate jdbcTemplate; 
 
     public List<Product> getAllProducts(){
-        return jdbcTemplate.query("select * from product", new ProductRowMapper()); 
+        return jdbcTemplate.query("select * from Product", new ProductRowMapper());
     }
 
-    public Product getOneProductID(int Product_ID) {
-        return jdbcTemplate.queryForObject("select * from product where Product_ID = ?", new ProductRowMapper(), Product_ID); 
+    public Product getOneProductID(int ProductID) {
+        return jdbcTemplate.queryForObject("select * from Product where ProductID = ?", new ProductRowMapper(), ProductID);
     }
 }

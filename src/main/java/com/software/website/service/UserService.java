@@ -14,11 +14,11 @@ public class UserService {
     private JdbcTemplate jdbcTemplate; 
 
     public List<Users> getAllUsers() {
-        return jdbcTemplate.query("select * from user", new UserRowMapper()); 
+        return jdbcTemplate.query("select * from Users", new UserRowMapper());
     }
     
-    public Users getOneUserByID(int User_ID){
-        return jdbcTemplate.queryForObject("select * from user where userID = ?", new UserRowMapper(), User_ID);
+    public Users getOneUserByID(int UserID){
+        return jdbcTemplate.queryForObject("select * from Users where UserID = ?", new UserRowMapper(), UserID);
         
     }
 }
