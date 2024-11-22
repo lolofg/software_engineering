@@ -40,24 +40,30 @@ public class UsersDeviceServiceTest {
         assertEquals(2, devices.size());
         assertEquals("Device 1", devices.get(0).getName());
         assertEquals(2, devices.get(1).getDeviceID());
-        verify(jdbcTemplate, times(1)).query("select * from Users_device", new Users_DeviceRowMapper());
+
+        verify(jdbcTemplate, times(1)).query(eq("select * from Users_device"), any(Users_DeviceRowMapper.class));
     }
 
     @Test
     void shouldReturnDeviceByID() {
         Users_Device mockDevice = new Users_Device(1, 1, 1, "Device 1");
 
-        when(jdbcTemplate.queryForObject(anyString(), any(Users_DeviceRowMapper.class), eq(1))).thenReturn(mockDevice);
+        when(jdbcTemplate.queryForObject(
+                eq("select * from Users_device WHERE DeviceID = ?"),
+                any(Users_DeviceRowMapper.class),
+                eq(1))
+        ).thenReturn(mockDevice);
 
         Users_Device device = deviceService.getOneDeviceByID(1);
 
         assertNotNull(device);
         assertEquals(1, device.getDeviceID());
         assertEquals("Device 1", device.getName());
+
         verify(jdbcTemplate, times(1)).queryForObject(
-                "select * from Users_device WHERE DeviceID = ?",
-                new Users_DeviceRowMapper(),
-                1
+                eq("select * from Users_device WHERE DeviceID = ?"),
+                any(Users_DeviceRowMapper.class),
+                eq(1)
         );
     }
 
@@ -74,28 +80,32 @@ public class UsersDeviceServiceTest {
     void shouldAddDeviceSuccessfully() {
         Users_Device mockDevice = new Users_Device(1, 1, 1, "Device 1");
 
-        doNothing().when(jdbcTemplate).update(anyString(), anyInt(), anyInt(), anyString());
+        when(jdbcTemplate.update(
+                eq("INSERT INTO Users_Device(UsersID, ProductID, Name) VALUES (?, ?, ?)"),
+                eq(1), eq(1), eq("Device 1")
+        )).thenReturn(1);
 
         deviceService.addDevice(mockDevice);
 
-        ArgumentCaptor<String> queryCaptor = ArgumentCaptor.forClass(String.class);
-        ArgumentCaptor<Object> argsCaptor = ArgumentCaptor.forClass(Object.class);
-
-        verify(jdbcTemplate, times(1)).update(queryCaptor.capture(), argsCaptor.capture(), argsCaptor.capture(), argsCaptor.capture());
-
-        assertEquals("INSERT INTO Device (Device_ID, Product_ID, Name) VALUES (?, ?, ?)", queryCaptor.getValue());
-        assertEquals(1, argsCaptor.getAllValues().get(0));
-        assertEquals(1, argsCaptor.getAllValues().get(1));
-        assertEquals("Device 1", argsCaptor.getAllValues().get(2));
+        verify(jdbcTemplate, times(1)).update(
+                eq("INSERT INTO Users_Device(UsersID, ProductID, Name) VALUES (?, ?, ?)"),
+                eq(1), eq(1), eq("Device 1")
+        );
     }
 
     @Test
     void shouldRemoveDeviceSuccessfully() {
-        doNothing().when(jdbcTemplate).update(anyString(), eq(1));
+        when(jdbcTemplate.update(
+                eq("DELETE FROM Users_device WHERE DeviceID = ?"),
+                eq(1)
+        )).thenReturn(1);
 
         deviceService.removeDevice(1);
 
-        verify(jdbcTemplate, times(1)).update("DELETE FROM Device WHERE Device_ID = ?", 1);
+        verify(jdbcTemplate, times(1)).update(
+                eq("DELETE FROM Users_device WHERE DeviceID = ?"),
+                eq(1)
+        );
     }
 
     @Test
@@ -113,12 +123,22 @@ public class UsersDeviceServiceTest {
                 new Users_Device(2, 1, 2, "Device 2")
         );
 
-        when(jdbcTemplate.query(anyString(), any(Users_DeviceRowMapper.class), eq(1))).thenReturn(mockDevices);
+        when(jdbcTemplate.query(
+                eq("SELECT * FROM Users_device WHERE UsersID = ?"),
+                any(Users_DeviceRowMapper.class),
+                eq(1)
+        )).thenReturn(mockDevices);
 
         List<Users_Device> devices = deviceService.getOneUsersDevices(1);
 
         assertEquals(2, devices.size());
         assertEquals("Device 1", devices.get(0).getName());
-        verify(jdbcTemplate, times(1)).query("SELECT * FROM Users_device WHERE UsersID = ?", new Users_DeviceRowMapper(), 1);
+        assertEquals("Device 2", devices.get(1).getName());
+
+        verify(jdbcTemplate, times(1)).query(
+                eq("SELECT * FROM Users_device WHERE UsersID = ?"),
+                any(Users_DeviceRowMapper.class),
+                eq(1)
+        );
     }
 }
